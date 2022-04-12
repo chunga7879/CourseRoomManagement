@@ -1,0 +1,58 @@
+.addMain {
+	position: relative;
+	top: 200px;
+}
+
+.addMain > .inner {
+	height: 800px;
+	position: relative;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+
+}
+
+.addMain .add {
+	position: absolute;
+	font-size: 50px;
+}
+
+.addMain form{
+	position: absolute;
+	margin-top: 120px;
+	height: 350px;
+	font-size: 30px;
+	font-weight: 700;
+	padding: 80px 150px;
+	border-radius: 6px;
+	box-shadow: 2px 2px 20px rgba(0,0,0,.3);
+
+}
+
+.addMain form p {
+	position: absolute;
+	left: 110px;
+	bottom: 50px;
+	font-size: 12px;
+	color: darkred;
+	text-align: left;
+}
+
+.addMain .submit {
+	font-size: 20px;
+}
+
+.addMain a {
+	font-size: 16px;
+	border-radius: 6px;
+	box-shadow: 2px 2px 20px rgba(0,0,0,.3);
+}
+
+.addMain #result {
+	position: absolute;
+	bottom: 100px;
+	left: 25%;
+	width: 50%;
+	border-radius: 6px;
+	box-shadow: 2px 2px 20px rgba(0,0,0,.3);
+}

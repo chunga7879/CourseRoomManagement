@@ -1,0 +1,125 @@
+.button {
+	background-color: #3f51b5;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: #333333;
+}
+
+body {
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.4;
+	color: #333;
+}
+
+.inner {
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+}
+
+header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 9;
+	background-color: #F6F5F0;
+	border-bottom: 1px solid #c8c8c8;
+}
+header > .inner {
+	height: 200px;
+	display: flex;
+	align-items: center;
+}
+header .logo {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+
+header .contents {
+	font-size: 30px;
+	position: absolute;
+	top: 70px;
+	left: 200px;
+}
+
+header .content2 {
+	font-size: 20px;
+	position: absolute;
+	top: 120px;
+	left: 200px;
+}
+
+.main {
+	position: relative;
+	margin-top: 150px;
+}
+
+.main > .inner {
+	height: 800px;
+	position: relative;
+}
+
+.main .kinds {
+	position: absolute;
+	height: 800px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	list-style-type: none;
+	text-align: center;
+
+}
+
+.main .material-icons {
+	height: 24px;
+	font-size: 150px;
+}
+
+.main li {
+	margin: 50px;
+	width: 200px;
+}
+
+.btn {
+	position: absolute;
+	left: 158px;
+	margin-top: 20px;
+	width: 130px;
+	padding: 20px;
+	border: 2px solid #333;
+	border-radius: 4px;
+	color: #333;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	cursor: pointer;
+	box-sizing: border-box;
+	display: block;
+	transition: .4s;
+}
+.btn:hover {
+	background-color: #333;
+	color: #FFF;
+}
+
+
+
+

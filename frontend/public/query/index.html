@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<title>310 Frontend</title>
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/query.css" />
+	<link rel="icon" href="../favicon.ico" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		  rel="stylesheet">
+</head>
+<body>
+<header>
+	<div class="inner">
+		<a href="../index.html" class="logo">
+			<img src="../images/ubc_logo.jpg" alt="UBC_LOGO" />
+		</a>
+		<h2 class="contents">UBC INSIGHT - EXPLORE DATA</h2>
+		<h3 class="content2">WELCOME TO TEAM 148 WEBPAGE</h3>
+	</div>
+</header>
+
+
+<section class="queryMain">
+	<div class="inner">
+		<h2 class="query">Query From Dataset</h2>
+		<div class="container">
+			<form action="http://localhost:4321/" method="post"
+				  onsubmit="AJAXSubmit(this); return false;">
+				</fieldset>
+				<h4>Write Your Query Input</h4>
+				<textarea id="queryInput"></textarea>
+				<button id="submit" class="btn">SUBMIT</button>
+				</fieldset>
+			</form>
+			<div id="right">
+				<textarea id="result">Result: </textarea>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<script>
+	let getD = document.querySelector("button");
+	getD.addEventListener("click", AJAXSubmit);
+	function ajaxSuccess () {
+		console.log(this.responseText);
+		document.getElementById("result").innerHTML= (this.responseText);
+	}
+
+	function AJAXSubmit(oFormElement) {
+		let oReq = new XMLHttpRequest();
+		oReq.onload = ajaxSuccess;
+		oReq.open("post", oFormElement.action + "query");
+		oReq.setRequestHeader("Content-Type", "application/json");
+		oReq.send(oFormElement.elements[0].value);
+	}
+</script>
+
+</body>
+</html>

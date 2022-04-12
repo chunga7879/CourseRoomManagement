@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<title>310 Frontend</title>
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/booster.css" />
+
+	<!--		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />-->
+	<link rel="icon" href="../favicon.ico" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		  rel="stylesheet">
+</head>
+<body>
+<header>
+	<div class="inner">
+		<a href="../index.html" class="logo">
+			<img src="../images/ubc_logo.jpg" alt="UBC_LOGO" />
+		</a>
+		<h2 class="contents">UBC INSIGHT - EXPLORE DATA</h2>
+		<h3 class="content2">WELCOME TO TEAM 148 WEBPAGE</h3>
+	</div>
+</header>
+
+<section class="boosterMain">
+	<div class="inner">
+		<div class="asking">
+			<h1>Are You CPSC Student?</h1>
+			<h2>Yeah!!!</h2>
+			<h1>You Want HIGH GPA?</h1>
+			<h2>Yeah!!!</h2>
+			<h1>PUSH THE BUTTON</h1>
+			<span class="material-icons">arrow_downward</span>
+			<button id="submit" class="btn">Booster</button>
+		</div>
+		<div class="resulting">
+			<div id="result"></div>
+		</div>
+
+	</div>
+</section>
+
+<script>
+	let submit = document.querySelector("button");
+	submit.addEventListener("click", AJAXSubmit);
+
+	function ajaxSuccess () {
+		console.log(this.responseText);
+		let query = JSON.parse(this.responseText);
+		let re = query["result"];
+		if (re === undefined) {
+			document.getElementById("result").innerHTML = "Oops! Something went wrong"
+		} else {
+			let col = [];
+			for (let key of Object.keys(re[0])) {
+				col.push(key);
+			}
+			let table = document.createElement("table");
+			let tr = table.insertRow(-1);
+			for (let i = 0; i < col.length; i++) {
+				let th = document.createElement("th");
+				th.innerHTML = col[i];
+				tr.appendChild(th);
+			}
+			for (let i = 0; i < re.length; i++) {
+				tr = table.insertRow(-1);
+				for (let j = 0; j < col.length; j++) {
+					let tab = tr.insertCell(j);
+					tab.innerHTML = re[i][col[j]];
+				}
+			}
+
+			let c = document.getElementById("result");
+			c.innerHTML = "";
+			c.appendChild(table);
+		}
+	}
+
+	function AJAXSubmit() {
+		let oReq = new XMLHttpRequest();
+		oReq.onload = ajaxSuccess;
+		oReq.open("post", "http://localhost:4321/query");
+		oReq.setRequestHeader("Content-Type", "application/json");
+		let query = {
+			"WHERE": {
+				"IS": {
+					"ubc_dept": "cpsc"
+				}
+			},
+			"OPTIONS": {
+				"COLUMNS": [
+					"ubc_title",
+					"ubc_dept",
+					"ubc_avg",
+					"ubc_instructor",
+					"ubc_fail",
+					"ubc_year"
+				],
+				"ORDER": {
+					"dir": "DOWN",
+					"keys": [
+						"ubc_avg"
+					]
+				}
+			}
+		};
+		oReq.send(JSON.stringify(query));
+	}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<!--		"application/json-->
+	<!--		text/html-->
+	<meta http-equiv="Content-type" content="application/json; charset=utf-8"/>
+	<title>310 Frontend</title>
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/add.css" />
+	<link rel="icon" href="../favicon.ico" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		  rel="stylesheet">
+</head>
+<body>
+
+<header>
+	<div class="inner">
+		<a href="../index.html" class="logo">
+			<img src="../images/ubc_logo.jpg" alt="UBC_LOGO" />
+		</a>
+		<h2 class="contents">UBC INSIGHT - EXPLORE DATA</h2>
+		<h3 class="content2">WELCOME TO TEAM 148 WEBPAGE</h3>
+	</div>
+</header>
+
+<section class="addMain">
+	<div class="inner">
+		<h2 class="add">Add Dataset</h2>
+		<!--			action="http://localhost:4321/dataset/" method="put"-->
+		<form action="http://localhost:4321/dataset/" method="put"
+			  onsubmit="AJAXSubmit(this); return false;">
+			</fieldset>
+			<p>
+				Your dataset kind is only two - Course or Room, </br>
+				ID should be in correct format (no only white space and include _), </br>
+				File need to be zip file format
+			</p>
+			<label>Dataset ID:</label><br>
+			<input type="text" id="id"><br>
+
+			<label>Dataset Kind:</label><br>
+			<input type="text" id="kind"><br>
+
+			<input id="fileupload" type="file" name="fileupload" />
+			<button id="submit">submit</button>
+			</fieldset>
+		</form>
+		<div id="result">Result: </div>
+
+	</div>
+</section>
+
+<script>
+
+	function ajaxSuccess () {
+		console.log(this.responseText);
+		document.getElementById("result").innerHTML= this.responseText;
+	}
+	function AJAXSubmit (oFormElement) {
+		if (!oFormElement.action) { return; }
+		let oReq = new XMLHttpRequest();
+		oReq.onload = ajaxSuccess;
+		let zip_data = oFormElement.elements[2].files[0];
+		if (zip_data === undefined) {
+			oReq.open("put", oFormElement.action + oFormElement.elements[0].value + "/" + oFormElement.elements[1].value);
+			oReq.send();
+		} else {
+			let reader = new FileReader();
+			reader.readAsBinaryString(zip_data);
+			reader.onload = function(evt){
+				let content = evt.target.result;
+				let stringC = content.toString();
+				let lengthC = stringC.length;
+				let byteNumbers = new Array(lengthC);
+				for (let i = 0; i < lengthC; i++) {
+					byteNumbers[i] = stringC.charCodeAt(i);
+				}
+				if (oFormElement.elements[0].value === "") {
+					oReq.open("put", oFormElement.action + " " + "/" + oFormElement.elements[1].value);
+				} else if (oFormElement.elements[1].value === "") {
+					oReq.open("put", oFormElement.action + oFormElement.elements[0].value + "/" + "nothing");
+				} else {
+					oReq.open("put", oFormElement.action + oFormElement.elements[0].value + "/" + oFormElement.elements[1].value);
+				}
+				let byteArray = new Uint8Array(byteNumbers);
+				let blob = new Blob([byteArray], {type: "application/x-zip-compressed"});
+				oReq.send(blob);
+			}
+		}
+
+	}
+</script>
+</body>
+</html>

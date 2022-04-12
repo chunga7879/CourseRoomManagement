@@ -1,0 +1,64 @@
+.getMain {
+	position: relative;
+	top: 100px;
+}
+
+.getMain > .inner {
+	height: 800px;
+	position: relative;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.getMain .container {
+	top: 100px;
+	display: flex;
+	background-color: #333333;
+}
+
+.getMain .container #left {
+	position: absolute;
+	top: 120px;
+	left: 50px;
+	width: 40%;
+	height: 400px;
+	text-align: center;
+}
+
+.getMain .container #left .get {
+	position: absolute;
+	font-size: 50px;
+}
+
+
+.getMain .container #left .material-icons {
+	position: absolute;
+	top: 170px;
+	left: 150px;
+	height: 40px;
+	font-size: 150px;
+}
+
+
+.getMain .container #right {
+	position: absolute;
+	top: 120px;
+	right: 50px;
+	background-color: beige;
+	width: 50%;
+	height: 400px;
+	border-radius: 6px;
+	box-shadow: 2px 2px 20px rgba(0,0,0,.3);
+}
+
+.getMain #submit {
+	position: absolute;
+	top: 500px;
+	left: 500px;
+}
+
+.getMain #result {
+	font-size: 18px;
+	font-weight: bold;
+}

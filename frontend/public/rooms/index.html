@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<title>310 Frontend</title>
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/rooms.css" />
+
+	<!--		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />-->
+	<link rel="icon" href="../favicon.ico" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		  rel="stylesheet">
+</head>
+<body>
+<header>
+	<div class="inner">
+		<a href="../index.html" class="logo">
+			<img src="../images/ubc_logo.jpg" alt="UBC_LOGO" />
+		</a>
+		<h2 class="contents">UBC INSIGHT - EXPLORE DATA</h2>
+		<h3 class="content2">WELCOME TO TEAM 148 WEBPAGE</h3>
+	</div>
+</header>
+
+<section class="roomsMain">
+	<div class="inner">
+		<div class="asking">
+			<h1>Do You Want To Book A Room For Small Group Meeting?</h1>
+			<h2>Yeah!!!</h2>
+			<h1>You Want To Know Rooms with Capacity More Than You Want?</h1>
+			<h2>Yeah!!!</h2>
+			<input type="text" id="capacity" placeholder="Put Capacity You Want">
+			<h1>PUSH THE BUTTON</h1>
+			<span class="material-icons">arrow_downward</span>
+			<button id="submit" class="btn">SUBMIT</button>
+		</div>
+		<div class="resulting">
+			<div id="result"></div>
+		</div>
+
+	</div>
+</section>
+
+<script>
+	let submit = document.querySelector("button");
+	submit.addEventListener("click", AJAXSubmit);
+
+	function ajaxSuccess () {
+		console.log(this.responseText);
+		let query = JSON.parse(this.responseText);
+		let re = query["result"];
+		console.log(re);
+		if (re === undefined) {
+			document.getElementById("result").innerHTML = "Oops! Something went wrong"
+		} else {
+			let col = [];
+			for (let key of Object.keys(re[0])) {
+				col.push(key);
+			}
+			let table = document.createElement("table");
+			let tr = table.insertRow(-1);
+			for (let i = 0; i < col.length; i++) {
+				let th = document.createElement("th");
+				th.innerHTML = col[i];
+				tr.appendChild(th);
+			}
+			for (let i = 0; i < re.length; i++) {
+				tr = table.insertRow(-1);
+				for (let j = 0; j < col.length; j++) {
+					let tab = tr.insertCell(j);
+					tab.innerHTML = re[i][col[j]];
+				}
+			}
+
+			let c = document.getElementById("result");
+			c.innerHTML = "";
+			c.appendChild(table);
+		}
+	}
+
+	function AJAXSubmit() {
+		let oReq = new XMLHttpRequest();
+		oReq.onload = ajaxSuccess;
+		oReq.open("post", "http://localhost:4321/query");
+		oReq.setRequestHeader("Content-Type", "application/json");
+		let query = {
+			"WHERE": {
+				"AND": [
+					{
+						"IS": {
+							"ubcRooms_type": "Small Group"
+						}
+					},
+					{
+						"GT": {
+							"ubcRooms_seats": Number(document.querySelector("input").value)
+						}
+					}
+				]
+			},
+			"OPTIONS": {
+				"COLUMNS": [
+					"ubcRooms_name",
+					"ubcRooms_address",
+					"ubcRooms_seats"
+				],
+				"ORDER": {
+					"dir": "DOWN",
+					"keys": [
+						"ubcRooms_seats"
+					]
+				}
+			}
+		};
+		oReq.send(JSON.stringify(query));
+	}
+
+</script>
+
+</body>
+</html>

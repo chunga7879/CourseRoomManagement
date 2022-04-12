@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<title>310 Frontend</title>
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/delete.css" />
+	<link rel="icon" href="./frontend/public/favicon.ico" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		  rel="stylesheet">
+</head>
+	<body>
+	<header>
+		<div class="inner">
+			<a href="../index.html" class="logo">
+				<img src="../images/ubc_logo.jpg" alt="UBC_LOGO" />
+			</a>
+			<h2 class="contents">UBC INSIGHT - EXPLORE DATA</h2>
+			<h3 class="content2">WELCOME TO TEAM 148 WEBPAGE</h3>
+		</div>
+	</header>
+
+
+	<section class="deleteMain">
+		<div class="inner">
+			<h2 class="delete">Delete Dataset</h2>
+			<form action="http://localhost:4321/dataset/" method="put"
+				  onsubmit="AJAXSubmit(this); return false;">
+				</fieldset>
+
+				<label for="id">Dataset ID:</label><br>
+				<input type="text" id="id" name="id" value=""><br>
+				<button id="submit" class="btn">submit</button>
+				<p>
+					you can only delete the id previously added
+				</p>
+				</fieldset>
+			</form>
+			<div id="result">Result: </div>
+
+		</div>
+	</section>
+
+	<script>
+
+		function ajaxSuccess () {
+			console.log(this.responseText);
+			document.getElementById("result").innerHTML= (this.responseText);
+		}
+
+		function AJAXSubmit(oFormElement) {
+			let oReq = new XMLHttpRequest();
+			oReq.onload = ajaxSuccess;
+			if (oFormElement.elements[0].value === "") {
+				oReq.open("delete", oFormElement.action + "_");
+			} else if (oFormElement.elements[0].value.replace(/\s/g, "") === "") {
+				oReq.open("delete", oFormElement.action + "_");
+			} else {
+				oReq.open("delete", oFormElement.action + oFormElement.elements[0].value);
+			}
+			oReq.send();
+		}
+	</script>
+
+	</body>
+</html>

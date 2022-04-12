@@ -1,0 +1,78 @@
+.boosterMain {
+	position: relative;
+}
+
+.boosterMain > .inner {
+	height: 1200px;
+	position: relative;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+h2 {
+	display: block;
+}
+
+h1{
+	display: block;
+}
+
+.boosterMain .asking {
+	position: absolute;
+	width: 50%;
+	top: 200px;
+	left: 25%;
+	right: 0;
+	text-align: center;
+	justify-content: center;
+	border-radius: 6px;
+	box-shadow: 2px 2px 20px rgba(0,0,0,.3);
+}
+
+.boosterMain button {
+	position: absolute;
+	left: 38%;
+}
+
+.boosterMain .resulting {
+	position: absolute;
+	top: 650px;
+	left: 10%;
+	background-color: powderblue;
+	overflow: auto;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	width: 80%;
+	height: 500px;
+	border-radius: 6px;
+	box-shadow: 2px 2px 20px rgba(0,0,0,.3);
+}
+
+.boosterMain .resulting #result {
+	position: absolute;
+	padding: 20px;
+	width: 95%;
+	height: 95%;
+	top: 14px;
+	left: 50px;
+	overflow: auto;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+th, td {
+	font:15px Verdana;
+}
+table, th, td
+{
+	border: solid 1px #DDD;
+	border-collapse: collapse;
+	padding: 2px 3px;
+	text-align: center;
+	overflow: auto;
+
+}
+th {
+	font-weight:bold;
+}
