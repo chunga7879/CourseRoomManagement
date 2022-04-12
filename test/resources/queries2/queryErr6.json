@@ -1,0 +1,28 @@
+{
+	"title" : "Error - ORDER missing 'dir' key",
+	"input" : {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_id": "182"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_id",
+				"courses_avg"
+			],
+			"ORDER": {
+				"keys": [
+					"courses_avg"
+				]
+			}
+		}
+	},
+	"errorExpected" : true,
+	"with": "InsightError"
+}

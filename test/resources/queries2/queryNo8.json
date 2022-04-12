@@ -1,0 +1,29 @@
+{
+	"title" : "No error 8",
+	"input" : {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_id": "182"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_id",
+				"courses_avg"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"courses_avg"
+				]
+			}
+		}
+	},
+	"errorExpected" : false,
+	"with" : [{"courses_dept":"apsc","courses_id":"182","courses_avg":75.08},{"courses_dept":"apsc","courses_id":"182","courses_avg":75.08},{"courses_dept":"apsc","courses_id":"182","courses_avg":71.57},{"courses_dept":"apsc","courses_id":"182","courses_avg":71.57}]
+}

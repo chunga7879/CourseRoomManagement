@@ -1,0 +1,28 @@
+{
+  "title" : "Error - No group",
+  "input" : {
+    "WHERE": {
+      "GT": {
+        "courses_avg": 97
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_title",
+        "overallAvg"
+      ]
+    },
+    "TRANSFORMATIONS": {
+      "APPLY": [
+        {
+          "overallAvg": {
+            "AVG": "courses_avg"
+          }
+        }
+      ]
+    }
+  },
+  "errorExpected" : true,
+  "with": "InsightError"
+}
+

@@ -1,0 +1,66 @@
+{
+	"title" : "No error 1",
+	"input" : {
+
+		"WHERE": {
+
+			"AND": [{
+
+				"IS": {
+
+					"rooms_furniture": "*Tables*"
+
+				}
+
+			}, {
+
+				"GT": {
+
+					"rooms_seats": 300
+
+				}
+
+			}]
+
+		},
+
+		"OPTIONS": {
+
+			"COLUMNS": [
+
+				"rooms_shortname",
+				"rooms_type",
+				"maxSeats"
+
+			],
+
+			"ORDER": {
+
+				"dir": "DOWN",
+
+				"keys": ["maxSeats"]
+
+			}
+
+		},
+
+		"TRANSFORMATIONS": {
+
+			"GROUP": ["rooms_shortname", "rooms_type"],
+
+			"APPLY": [{
+
+				"maxSeats": {
+
+					"MAX": "rooms_seats"
+
+				}
+
+			}]
+
+		}
+
+	},
+	"errorExpected" : false,
+	"with": [{"rooms_shortname":"OSBO","rooms_type":"Open Design General Purpose","maxSeats":442},{"rooms_shortname":"HEBB","rooms_type":"Tiered Large Group","maxSeats":375},{"rooms_shortname":"LSC","rooms_type":"Tiered Large Group","maxSeats":350}]
+}

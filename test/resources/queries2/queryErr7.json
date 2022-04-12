@@ -1,0 +1,27 @@
+{
+	"title" : "Error - ORDER missing 'KEYS' key",
+	"input" : {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_id": "182"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_id",
+				"courses_avg"
+			],
+			"ORDER": {
+				"dir" : "UP"
+
+			}
+		}
+	},
+	"errorExpected" : true,
+	"with": "InsightError"
+}

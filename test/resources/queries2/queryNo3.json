@@ -1,0 +1,33 @@
+{
+  "title" : "No error 3",
+  "input" : {
+    "WHERE": {
+      "GT": {
+        "courses_avg": 97
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_instructor",
+        "courses_title",
+        "overallAvg"
+      ]
+    },
+    "TRANSFORMATIONS": {
+      "GROUP": [
+        "courses_instructor",
+        "courses_title"
+      ],
+      "APPLY": [
+        {
+          "overallAvg": {
+            "AVG": "courses_avg"
+          }
+        }
+      ]
+    }
+  },
+  "errorExpected" : false,
+  "with": [{"courses_instructor":"cox, daniel","courses_title":"career planning","overallAvg":99.19},{"courses_instructor":"neault, roberta a","courses_title":"career planning","overallAvg":97.47},{"courses_instructor":"","courses_title":"career planning","overallAvg":97.47},{"courses_instructor":"maillard, keith","courses_title":"thesis","overallAvg":98},{"courses_instructor":"grady, albert wayne","courses_title":"thesis","overallAvg":98},{"courses_instructor":"morgan, tannis","courses_title":"res mthd in educ","overallAvg":97.5},{"courses_instructor":"coria, lino","courses_title":"multimedia sys","overallAvg":98.75},{"courses_instructor":"","courses_title":"multimedia sys","overallAvg":98.75},{"courses_instructor":"cole, kenneth","courses_title":"assess lrn diffi","overallAvg":98.02},{"courses_instructor":"","courses_title":"assess lrn diffi","overallAvg":97.83},{"courses_instructor":"grow, laura","courses_title":"educ stds autism","overallAvg":98.71},{"courses_instructor":"wilk, diana","courses_title":"educ stds autism","overallAvg":97.41},{"courses_instructor":"","courses_title":"educ stds autism","overallAvg":98.67},{"courses_instructor":"cannon, joanna","courses_title":"dev el sk df&hrd","overallAvg":98.45},{"courses_instructor":"","courses_title":"dev el sk df&hrd","overallAvg":98.45},{"courses_instructor":"amaral, deborah;ford, laurie","courses_title":"acad assess schl","overallAvg":97.78},{"courses_instructor":"","courses_title":"acad assess schl","overallAvg":97.41},{"courses_instructor":"grow, laura","courses_title":"sem in autism","overallAvg":97.69},{"courses_instructor":"kishor, nand","courses_title":"cor des ed res","overallAvg":97.09},{"courses_instructor":"","courses_title":"cor des ed res","overallAvg":97.09},{"courses_instructor":"porath, marion","courses_title":"coll&uni teachng","overallAvg":97.67},{"courses_instructor":"fraser, ailana","courses_title":"diff geometry i","overallAvg":97.25},{"courses_instructor":"","courses_title":"diff geometry i","overallAvg":97.25},{"courses_instructor":"gomez, jose","courses_title":"algb topology i","overallAvg":99.78},{"courses_instructor":"","courses_title":"algb topology i","overallAvg":99.78},{"courses_instructor":"karu, kalle","courses_title":"algb geometry i","overallAvg":97.48},{"courses_instructor":"","courses_title":"algb geometry i","overallAvg":97.48},{"courses_instructor":"laba, izabella","courses_title":"harmonic anal i","overallAvg":97.09},{"courses_instructor":"","courses_title":"harmonic anal i","overallAvg":97.09},{"courses_instructor":"brew, nancy","courses_title":"cl pro prim care","overallAvg":98.71},{"courses_instructor":"","courses_title":"cl pro prim care","overallAvg":98.46},{"courses_instructor":"krist, jennifer","courses_title":"cl pro prim care","overallAvg":98.21},{"courses_instructor":"burrows, marlene;harding, jillian;krist, jennifer;mccuaig, fairleth","courses_title":"fam nrs pract","overallAvg":98.02},{"courses_instructor":"","courses_title":"fam nrs pract","overallAvg":98.3},{"courses_instructor":"brew, nancy","courses_title":"eth&profl issues","overallAvg":97.33},{"courses_instructor":"","courses_title":"eth&profl issues","overallAvg":97.33},{"courses_instructor":"frank, erica","courses_title":"work int health","overallAvg":98.98},{"courses_instructor":"","courses_title":"work int health","overallAvg":98.98}]
+}
+

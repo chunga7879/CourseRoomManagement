@@ -1,0 +1,43 @@
+{
+	"title": "error 1",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"GT": {
+						"rooms_seats": 100
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_shortname",
+				"rooms_seats",
+				"rooms_number",
+				"minLon"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"minLon", "rooms_number"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_shortname",
+				"rooms_number"
+			],
+			"APPLY": [
+				{
+					"minLon": {
+						"MIN": "rooms_lon"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"with": "InsightError"
+}

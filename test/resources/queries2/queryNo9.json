@@ -1,0 +1,29 @@
+{
+	"title" : "No error 9 - empty",
+	"input" : {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_id": "181"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_id",
+				"courses_avg"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"courses_avg"
+				]
+			}
+		}
+	},
+	"errorExpected" : false,
+	"with" : []
+}

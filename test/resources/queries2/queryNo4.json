@@ -1,0 +1,46 @@
+{
+  "title" : "No error 4",
+  "input" : {
+    "WHERE": {
+      "AND": [
+        {
+          "IS": {
+            "courses_dept": "math"
+          }
+        },
+        {
+          "GT": {
+            "courses_pass": 300
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_title",
+        "overAvg"
+      ],
+      "ORDER": {
+        "dir": "DOWN",
+        "keys": [
+          "overAvg"
+        ]
+      }
+    },
+    "TRANSFORMATIONS": {
+      "GROUP": [
+        "courses_title"
+      ],
+      "APPLY": [
+        {
+          "overAvg": {
+            "AVG": "courses_avg"
+          }
+        }
+      ]
+    }
+  },
+  "errorExpected" : false,
+  "with": [{"courses_title":"ord diff equtns","overAvg":70.48},{"courses_title":"df calc ap ph sc","overAvg":70.11},{"courses_title":"df calc app lf s","overAvg":70.02},{"courses_title":"multivrbl calc","overAvg":69.74},{"courses_title":"elem diff eq i","overAvg":69.63},{"courses_title":"dff calc ap c&ss","overAvg":69.24},{"courses_title":"diff equations","overAvg":68.88},{"courses_title":"matrix algebra","overAvg":68.77},{"courses_title":"int calc ap lf s","overAvg":67.88},{"courses_title":"math proof","overAvg":67.75},{"courses_title":"int calc ap c&ss","overAvg":67.33},{"courses_title":"calculus 3","overAvg":66.79},{"courses_title":"linear systems","overAvg":65.9},{"courses_title":"int calc ap ph s","overAvg":65.78},{"courses_title":"calc socsci comm","overAvg":63.4},{"courses_title":"dif calc phys ap","overAvg":60.86},{"courses_title":"diff calculus","overAvg":60.41}]
+}
+

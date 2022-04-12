@@ -1,0 +1,23 @@
+{
+  "title" : "Error - No apply",
+  "input" : {
+    "WHERE": {
+      "GT": {
+        "courses_avg": 97
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_title",
+        "overallAvg"
+      ]
+    },
+    "TRANSFORMATIONS": {
+      "GROUP": [
+        "courses_title"
+      ]
+    }
+  },
+  "errorExpected" : true,
+  "with": "InsightError"
+}

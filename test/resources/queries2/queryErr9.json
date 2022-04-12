@@ -1,0 +1,27 @@
+{
+	"title" : "Error - All ORDER keys must be in COLUMNS",
+	"input" : {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_id": "182"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_id",
+				"courses_avg"
+			],
+			"ORDER": {
+				"dir" : "UP",
+				"keys" : ["courses_instructor"]
+			}
+		}
+	},
+	"errorExpected" : true,
+	"with": "InsightError"
+}

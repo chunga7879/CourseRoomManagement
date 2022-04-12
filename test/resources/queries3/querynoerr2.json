@@ -1,0 +1,43 @@
+{
+	"title": "No error 1",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"GT": {
+						"rooms_seats": 100000
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_shortname",
+				"rooms_number",
+				"avgLat"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"avgLat"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_shortname",
+				"rooms_number"
+			],
+			"APPLY": [
+				{
+					"avgLat": {
+						"AVG": "rooms_lat"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"with": []
+}
+

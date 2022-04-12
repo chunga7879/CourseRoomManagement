@@ -1,0 +1,45 @@
+{
+	"title" : "No error 9 - empty",
+	"input" : {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_id": "181"
+					}
+				},
+				{
+					"GT": {
+						"courses_pass": 300
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_title",
+				"overAvg"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"overAvg"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_title"
+			],
+			"APPLY": [
+				{
+					"overAvg": {
+						"AVG": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected" : false,
+	"with" : []
+}
