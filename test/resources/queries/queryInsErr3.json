@@ -1,0 +1,18 @@
+{
+  "title" : "Simple PerformQuery with error - Excess keys in query",
+  "input" : {
+    "WHERE": {
+      "GT": {
+        "courses_avg": 97
+      }
+    },
+    "OPTIONS": {
+      "ORDER": "courses_avg"
+    }, "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+    ]
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

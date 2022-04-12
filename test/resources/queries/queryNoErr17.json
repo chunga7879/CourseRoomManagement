@@ -1,0 +1,21 @@
+{
+  "title" : "Simple PerformQuery without error - 9 (course title)",
+  "input" : {
+    "WHERE": {
+      "IS": {
+        "courses_title": "mult regres meth"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_title",
+        "courses_id",
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : false,
+  "with": [{"courses_title":"mult regres meth","courses_id":"530","courses_dept":"frst","courses_avg":79.64},{"courses_title":"mult regres meth","courses_id":"530","courses_dept":"frst","courses_avg":79.64},{"courses_title":"mult regres meth","courses_id":"530","courses_dept":"frst","courses_avg":85.14},{"courses_title":"mult regres meth","courses_id":"530","courses_dept":"frst","courses_avg":85.14},{"courses_title":"mult regres meth","courses_id":"530","courses_dept":"frst","courses_avg":85.56},{"courses_title":"mult regres meth","courses_id":"530","courses_dept":"frst","courses_avg":85.56},{"courses_title":"mult regres meth","courses_id":"530","courses_dept":"frst","courses_avg":85.6},{"courses_title":"mult regres meth","courses_id":"530","courses_dept":"frst","courses_avg":85.6}]
+}

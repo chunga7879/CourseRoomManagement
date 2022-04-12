@@ -1,0 +1,19 @@
+{
+  "title" : "PerformQuery with error - Put mkey to place for skey 5",
+  "input" : {
+    "WHERE": {
+      "IS": {
+        "courses_year": 2000
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

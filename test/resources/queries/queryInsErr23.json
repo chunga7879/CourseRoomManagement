@@ -1,0 +1,22 @@
+{
+  "title" : "PerformQuery with error - Invalid value type in IS, should be string 2",
+  "input" : {
+    "WHERE": {
+      "IS": {
+        "courses_uuid": 392
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_id",
+        "courses_dept",
+        "courses_avg",
+        "courses_title",
+        "courses_uuid"
+      ],
+      "ORDER": "courses_id"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

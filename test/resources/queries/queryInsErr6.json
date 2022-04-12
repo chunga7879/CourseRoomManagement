@@ -1,0 +1,19 @@
+{
+  "title" : "PerformQuery with error - Invalid value type in GT, should be number",
+  "input" : {
+    "WHERE": {
+      "GT": {
+        "courses_avg": "0"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

@@ -1,0 +1,21 @@
+{
+  "title" : "PerformQuery with error - EQ should only have 1 key, has 2",
+  "input" : {
+    "WHERE": {
+      "EQ": {
+        "courses_instructor": "laba",
+        "courses_uuid": 200
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_id",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

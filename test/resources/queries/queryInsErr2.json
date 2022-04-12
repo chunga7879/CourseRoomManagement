@@ -1,0 +1,16 @@
+{
+  "title" : "PerformQuery with error - COLUMNS must be a non-empty array",
+  "input" : {
+    "WHERE": {
+      "GT": {
+        "courses_avg": 97
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

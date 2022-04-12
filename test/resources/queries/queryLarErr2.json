@@ -1,0 +1,17 @@
+{
+  "title" : "PerformQuery with error - too big (all entries)",
+  "input" : {
+    "WHERE": {
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_id",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "ResultTooLargeError"
+}

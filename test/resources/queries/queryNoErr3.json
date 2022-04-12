@@ -1,0 +1,19 @@
+{
+  "title" : "Simple PerformQuery without error - 0 result",
+  "input" : {
+    "WHERE": {
+      "GT": {
+        "courses_fail": 300
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : false,
+  "with": []
+}

@@ -1,0 +1,39 @@
+{
+  "title" : "Complex PerformQuery without error - 14 (OR MORE ELEMENT)",
+  "input" : {
+    "WHERE": {
+      "OR": [
+        {
+          "EQ": {
+            "courses_audit": 1000
+          }
+        },
+        {
+          "GT": {
+            "courses_avg": 99
+          }
+        },
+        {
+          "IS": {
+            "courses_instructor": "leung*"
+          }
+        },
+        {
+          "GT": {
+            "courses_pass": 100000
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg",
+        "courses_instructor"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : false,
+  "with": [{"courses_dept":"math","courses_avg":58.38,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":58.42,"courses_instructor":"leung, fok-shuen;sargent, pamela;tba"},{"courses_dept":"math","courses_avg":59.85,"courses_instructor":"leung, fok-shuen;wong, tom"},{"courses_dept":"math","courses_avg":61.62,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":62.47,"courses_instructor":"leung, fok-shuen;sargent, pamela;wong, tom"},{"courses_dept":"math","courses_avg":63.03,"courses_instructor":"leung, fok-shuen;sargent, pamela;tba"},{"courses_dept":"math","courses_avg":63.84,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":65.2,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"vant","courses_avg":65.67,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":66.43,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":68.51,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":68.79,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":69.31,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":69.94,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":70.93,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"wood","courses_avg":75.76,"courses_instructor":"leung, vincent"},{"courses_dept":"eece","courses_avg":75.81,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":77.68,"courses_instructor":"leung, cyril s"},{"courses_dept":"eece","courses_avg":78,"courses_instructor":"leung, cyril s"},{"courses_dept":"wood","courses_avg":78.76,"courses_instructor":"leung, vincent"},{"courses_dept":"wood","courses_avg":78.89,"courses_instructor":"leung, vincent"},{"courses_dept":"elec","courses_avg":79.25,"courses_instructor":"leung, cyril s"},{"courses_dept":"eece","courses_avg":79.67,"courses_instructor":"leung, cyril s"},{"courses_dept":"eece","courses_avg":80.18,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":80.45,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":81.3,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":81.33,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":81.63,"courses_instructor":"leung, victor c"},{"courses_dept":"wood","courses_avg":82,"courses_instructor":"leung, vincent"},{"courses_dept":"stat","courses_avg":82.08,"courses_instructor":"leung, andy chun yin"},{"courses_dept":"eece","courses_avg":82.15,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":82.2,"courses_instructor":"leung, cyril s"},{"courses_dept":"eece","courses_avg":82.56,"courses_instructor":"leung, victor c"},{"courses_dept":"phar","courses_avg":83.61,"courses_instructor":"leung, larry;min, jason"},{"courses_dept":"phar","courses_avg":83.93,"courses_instructor":"leung, larry;min, jason"},{"courses_dept":"phar","courses_avg":84.87,"courses_instructor":"leung, larry;min, jason"},{"courses_dept":"phar","courses_avg":85.23,"courses_instructor":"leung, larry;nicholl, tessa"},{"courses_dept":"obst","courses_avg":85.4,"courses_instructor":"leung, peter c"},{"courses_dept":"phar","courses_avg":86.3,"courses_instructor":"leung, larry;nicholl, tessa"},{"courses_dept":"obst","courses_avg":86.75,"courses_instructor":"leung, peter c"},{"courses_dept":"phar","courses_avg":87.92,"courses_instructor":"leung, larry;min, jason"},{"courses_dept":"phar","courses_avg":90.7,"courses_instructor":"leung, larry;min, jason"},{"courses_dept":"phar","courses_avg":90.88,"courses_instructor":"leung, larry;min, jason"},{"courses_dept":"phar","courses_avg":91.26,"courses_instructor":"leung, larry;min, jason"},{"courses_dept":"phar","courses_avg":91.63,"courses_instructor":"leung, larry;min, jason"},{"courses_dept":"phrm","courses_avg":94.23,"courses_instructor":"leung, larry"},{"courses_dept":"cnps","courses_avg":99.19,"courses_instructor":"cox, daniel"},{"courses_dept":"math","courses_avg":99.78,"courses_instructor":"gomez, jose"},{"courses_dept":"math","courses_avg":99.78,"courses_instructor":""}]
+}

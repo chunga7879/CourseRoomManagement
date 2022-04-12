@@ -1,0 +1,20 @@
+{
+  "title" : "PerformQuery with error - Invalid key type in IS",
+  "input" : {
+    "WHERE": {
+      "IS": {
+        "courses_avg": 97
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg",
+        "courses_instructor"
+      ],
+      "ORDER": "courses_instructor"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

@@ -1,0 +1,15 @@
+{
+  "title" : "PerformQuery with error - OPTIONS missing COLUMNS",
+  "input" : {
+    "WHERE": {
+      "GT": {
+        "courses_avg": 97
+      }
+    },
+    "OPTIONS": {
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

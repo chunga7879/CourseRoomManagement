@@ -1,0 +1,20 @@
+{
+  "title" : "PerformQuery with error - too big (*)",
+  "input" : {
+    "WHERE": {
+      "IS": {
+        "courses_instructor": "*"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg",
+        "courses_instructor"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "ResultTooLargeError"
+}

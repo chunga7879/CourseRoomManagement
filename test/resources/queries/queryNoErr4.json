@@ -1,0 +1,20 @@
+{
+  "title" : "Simple PerformQuery without error : 0 result -2",
+  "input" : {
+    "WHERE": {
+      "EQ": {
+        "courses_year": 2000
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : false,
+  "with":[]
+  
+}

@@ -1,0 +1,19 @@
+{
+  "title" : "PerformQuery with error - Invalid key type in LT, should be number 2",
+  "input" : {
+    "WHERE": {
+      "LT": {
+        "courses_instructor": "laba"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

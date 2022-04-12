@@ -1,0 +1,20 @@
+{
+  "title" : "PerformQuery with error -  Invalid value type in EQ, need to be number",
+  "input" : {
+    "WHERE": {
+      "WHERE": {
+        "EQ": {
+          "courses_year": "2010"
+        }
+      },
+      "OPTIONS": {
+        "COLUMNS": [
+          "courses_dept",
+          "courses_avg"
+        ],
+        "ORDER": "courses_avg"
+      }
+    }
+  }, "errorExpected" : true,
+  "with" : "InsightError"
+}

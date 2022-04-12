@@ -1,0 +1,19 @@
+{
+  "title" : "PerformQuery with error - Invalid key type in GT",
+  "input" : {
+    "WHERE": {
+      "GT": {
+        "courses_dept": "math"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

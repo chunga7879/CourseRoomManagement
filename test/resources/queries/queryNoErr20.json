@@ -1,0 +1,28 @@
+{
+  "title" : "Complex PerformQuery without error - 12 (USE OR TWO ELEMENT)",
+  "input" : {
+    "WHERE": {
+      "OR": [
+        {
+          "IS": {
+            "courses_id": "182"
+          }
+        },
+        {
+          "GT": {
+            "courses_avg": 99
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_id",
+        "courses_dept"
+      ],
+      "ORDER": "courses_id"
+    }
+  },
+  "errorExpected" : false,
+  "with": [{"courses_id":"182","courses_dept":"apsc"},{"courses_id":"182","courses_dept":"apsc"},{"courses_id":"182","courses_dept":"apsc"},{"courses_id":"182","courses_dept":"apsc"},{"courses_id":"527","courses_dept":"math"},{"courses_id":"527","courses_dept":"math"},{"courses_id":"574","courses_dept":"cnps"}]
+}

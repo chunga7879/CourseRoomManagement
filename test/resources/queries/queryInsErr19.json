@@ -1,0 +1,21 @@
+{
+  "title" : "PerformQuery with error -  Invalid key courses_stnum in COLUMNS",
+  "input" : {
+    "WHERE": {
+      "GT": {
+        "courses_fail": 100
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg",
+        "courses_fail",
+        "courses_stnum"
+      ],
+      "ORDER": "courses_stnum"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

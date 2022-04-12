@@ -1,0 +1,20 @@
+{
+  "title" : "Simple PerformQuery without error - 15 for some, * ",
+  "input" : {
+    "WHERE": {
+      "IS": {
+        "courses_instructor": "leung, victor*"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg",
+        "courses_instructor"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : false,
+  "with": [{"courses_dept":"eece","courses_avg":75.81,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":80.18,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":80.45,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":81.3,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":81.33,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":81.63,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":82.15,"courses_instructor":"leung, victor c"},{"courses_dept":"eece","courses_avg":82.56,"courses_instructor":"leung, victor c"}]
+}

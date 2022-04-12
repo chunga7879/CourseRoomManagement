@@ -1,0 +1,15 @@
+{
+  "title" : "PerformQuery with error - Invalid key coursesavg in GT: key need to be id_...",
+  "input" : {
+    "WHERE": {
+      "GT": {
+        "coursesavg": 97
+      }
+    },
+    "OPTIONS": {
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

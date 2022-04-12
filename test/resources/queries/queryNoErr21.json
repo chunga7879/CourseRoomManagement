@@ -1,0 +1,40 @@
+{
+  "title" : "Complex PerformQuery without error - 13 (AND MORE ELEMENT)",
+  "input" : {
+    "WHERE": {
+      "AND": [
+        {
+          "IS": {
+            "courses_dept": "math"
+          }
+        },
+        {
+          "GT": {
+            "courses_avg": 60
+          }
+        },
+        {
+          "IS": {
+            "courses_instructor": "leung*"
+          }
+        },
+        {
+          "GT": {
+            "courses_pass": 10
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg",
+        "courses_instructor"
+      ],
+      "ORDER": "courses_avg"
+    }
+  }
+  ,
+  "errorExpected" : false,
+  "with": [{"courses_dept":"math","courses_avg":61.62,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":62.47,"courses_instructor":"leung, fok-shuen;sargent, pamela;wong, tom"},{"courses_dept":"math","courses_avg":63.03,"courses_instructor":"leung, fok-shuen;sargent, pamela;tba"},{"courses_dept":"math","courses_avg":63.84,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":65.2,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":66.43,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":68.51,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":68.79,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":69.31,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":69.94,"courses_instructor":"leung, fok-shuen"},{"courses_dept":"math","courses_avg":70.93,"courses_instructor":"leung, fok-shuen"}]
+}

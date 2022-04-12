@@ -1,0 +1,19 @@
+{
+  "title" : "PerformQuery with error - Put skey to place for mkey 3",
+  "input" : {
+    "WHERE": {
+      "LT": {
+        "courses_title": "forest ecology"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

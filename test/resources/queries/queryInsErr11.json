@@ -1,0 +1,7 @@
+{
+  "title" : "PerformQuery with error - no body & option",
+  "input" : {
+  },
+  "errorExpected" : true,
+  "with" : "InsightError"
+}

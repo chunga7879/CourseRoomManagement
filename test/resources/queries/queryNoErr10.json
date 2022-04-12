@@ -1,0 +1,22 @@
+{
+  "title" : "Simple PerformQuery without error 4",
+  "input" : {
+    "WHERE": {
+      "IS": {
+        "courses_uuid": "200"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_id",
+        "courses_dept",
+        "courses_avg",
+        "courses_title",
+        "courses_uuid"
+      ],
+      "ORDER": "courses_id"
+    }
+  },
+  "errorExpected" : false,
+  "with": [{"courses_id":"201","courses_dept":"musc","courses_avg":73.96,"courses_title":"musical forms","courses_uuid":"200"}]
+}

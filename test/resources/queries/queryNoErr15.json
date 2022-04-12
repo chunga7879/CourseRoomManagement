@@ -1,0 +1,20 @@
+{
+  "title" : "Simple PerformQuery without error 7 - courses_instructor without *",
+  "input" : {
+    "WHERE": {
+      "IS": {
+        "courses_instructor": "laba"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg",
+        "courses_instructor"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected" : false,
+  "with": []
+}

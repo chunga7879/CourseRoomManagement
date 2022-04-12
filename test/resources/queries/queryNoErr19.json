@@ -1,0 +1,29 @@
+{
+  "title" : "Complex PerformQuery without error - 11 (AND TWO ELEMENT)",
+  "input" : {
+    "WHERE": {
+      "AND": [
+        {
+          "EQ": {
+            "courses_pass": 1
+          }
+        },
+        {
+          "GT": {
+            "courses_avg": 97
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_id",
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_id"
+    }
+  },
+  "errorExpected" : false,
+  "with": [{"courses_id":"599","courses_dept":"crwr","courses_avg":98},{"courses_id":"599","courses_dept":"crwr","courses_avg":98}]
+}
